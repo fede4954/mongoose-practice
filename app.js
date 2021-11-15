@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const chalk = require('chalk')
-
 const DB = 'mongoose-example' //Save the DB in a variable
 
 //Models
@@ -50,21 +49,21 @@ const createStudent = async() => {
 
 
 //READ
-// const findStudent = async() => {
-//     try{
-//         const students = await Student.find({age: 10}, {name: 1}) //Filter all students aged 10, project only their name
-//         console.log(students)
-//     }
-//     catch(err){
-//         console.log('Error:', err)
-//     }
-// }
+const findStudent = async() => {
+    try{
+        const students = await Student.find({age: 10}, {name: 1}) //Filter all students aged 10, project only their name
+        console.log(students)
+    }
+    catch(err){
+        console.log('Error:', err)
+    }
+}
 
 // findStudent()
 
 const findStudentById = async(id) => {
     try{
-        const student = await Student.findById(id) //Find document by _id
+        const student = await Student.findById(id)
         console.log(student)
     }
     catch(err){
@@ -77,25 +76,25 @@ const findStudentById = async(id) => {
 
 
 //UPDATE
-// const updateStudent = async() => {
-//     try{
-//         const updatedStudent = await Student.findOneAndUpdate({name: 'Lachan'}, //Finds student named Lachan, 
-//         {pendingBills: true, age: 11}, //updates pending bills and age
-//         {new: true} //Returns the document  after being updated
-//         ) 
-//         console.log(updatedStudent)
-//     }
-//     catch(err){
-//         console.log('Error:', err)
-//     }
-// }
+const updateStudent = async() => {
+    try{
+        const updatedStudent = await Student.findOneAndUpdate({name: 'Lachan'}, //Finds student named Lachan, 
+        {pendingBills: true, age: 11}, //updates pending bills and age
+        {new: true} //Returns the document  after being updated
+        ) 
+        console.log(updatedStudent)
+    }
+    catch(err){
+        console.log('Error:', err)
+    }
+}
 
 // updateStudent()
 
-// const updateSomeStudents = async() => {
-//     const response = await Student.updateMany({age: 10}, {age: 15})
-//     console.log(response)
-// }
+const updateSomeStudents = async() => {
+    const response = await Student.updateMany({age: 10}, {age: 15}) //Change students aged 10 to 15
+    console.log(response)
+}
 
 // updateSomeStudents()
 
@@ -105,7 +104,7 @@ const updateStudentById = async(id) => {
             {age: 15},
             {new: true}
         )
-        console.log(updatedStudent)
+        console.log(updatedStudent) //Returns student before update(?)
     }
     catch(err){
         console.log('Error:', err)
@@ -126,29 +125,29 @@ const deleteOneStudent = async() => {
     }
 }
 
-deleteOneStudent()
+// deleteOneStudent()
 
-// const deleteManyStudents = async() => {
-//     try{
-//       const response = await Student.deleteMany({name: 'Dummy'})
-//       console.log(response)
-//     }
-//     catch(err){
-//       console.log('Error:', err)
-//     }
-// }
+const deleteManyStudents = async() => {
+    try{
+      const response = await Student.deleteMany({name: 'Dummy'})
+      console.log(response) //Show deleted students
+    }
+    catch(err){
+      console.log('Error:', err)
+    }
+}
 
 // deleteManyStudents()
 
-// const deleteStudentById = async(id) => {
-//     try{
-//       const deletedStudent = await Student.findByIdAndDelete(id, {new: true})
-//       console.log(deletedStudent)
-//     }
-//     catch(err){
-//       console.log('Error:', err)
-//     }
-// }
+const deleteStudentById = async(id) => {
+    try{
+      const deletedStudent = await Student.findByIdAndDelete(id, {new: true})
+      console.log(deletedStudent) //Shows deleted student
+    }
+    catch(err){
+      console.log('Error:', err)
+    }
+}
   
 // deleteStudentById('618e4360d9bc03f0caa995b8')
 
