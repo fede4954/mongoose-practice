@@ -67,7 +67,7 @@ app.get('/new-student', (req, res) => {
 app.post('/new-student', async(req, res) => {
     try{
         const createdStudent = await Student.create(req.body) //req.body NEEDS the body parser middleware   
-        res.redirect('/all-students')           
+        // res.redirect('/all-students')           
     }
     catch(err){
         console.log(chalk.bgRed('Error:', err))
