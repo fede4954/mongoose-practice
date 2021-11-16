@@ -24,7 +24,6 @@ const connectToMongo = async () => {
 connectToMongo() //Call the function to connect
 
 
-
 //CREATE
 //Create new document
 const createStudent = async() => {
@@ -45,7 +44,6 @@ const createStudent = async() => {
 }
 
 // createStudent()
-
 
 
 //READ
@@ -72,7 +70,6 @@ const findStudentById = async(id) => {
 }
 
 // findStudentById('618e3d5895e77e4fc7405341')
-
 
 
 //UPDATE
@@ -112,7 +109,6 @@ const updateStudentById = async(id) => {
 }
 
 // updateStudentById('618e4346567135e2c5afc18d')
-
 
 
 //DELETE

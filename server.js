@@ -17,7 +17,6 @@ const password = process.env.PASSWORD
 const Student = require('./models/Student.js')
 
 
-
 //DATABASE CONNECTION
 const connectToMongo = async () => {
     try {
@@ -37,7 +36,6 @@ const connectToMongo = async () => {
 connectToMongo()
 
 
-
 //MIDDLEWARE
 //View Engine
 app.set('views', __dirname + '/views')
@@ -48,8 +46,6 @@ app.use(express.static('public'))
 
 //Body parser (comes bundled in express)
 app.use(express.json())
-
-
 
 
 //ROUTES
@@ -112,7 +108,6 @@ app.put('/edit-student/:id', async(req, res) => {
         console.log(err)
       } 
 })
-
 
 
 //SERVER

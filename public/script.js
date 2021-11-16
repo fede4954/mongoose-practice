@@ -1,4 +1,5 @@
-//FRONTEND JS
+//This file is the FRONTEND JS
+
 
 //CREATE STUDENT
 const createStudentButton = document.getElementById('create-student')
@@ -29,7 +30,6 @@ if(createStudentButton){ //Check whether the button exists on the page you're in
         window.location.assign('http://localhost:3000/all-students')
     })
 }
-
 
 
 //EDIT AND DELETE
