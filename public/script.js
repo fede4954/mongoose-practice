@@ -9,11 +9,13 @@ if(createStudentButton){ //Check whether the button exists on the page you're in
         const lastName = document.getElementById('lastName').value
         const age = document.getElementById('age').value
         const classroom = document.getElementById('class').value
+        const pendingBills = document.getElementById('pendingBills').value
         const allInputs = {
             name, //Written like this when key and value are named the same
             lastName,
             age,
-            class: classroom
+            class: classroom,
+            pendingBills
         }
     
         //Send REQUEST to the backend using axios
@@ -37,8 +39,8 @@ const deleteStudentButton = document.getElementById('delete-student')
 if (editStudentButton && deleteStudentButton) { 
     editStudentButton.addEventListener('click', async() => {
         const studentId = editStudentButton.getAttribute('data')//Gets id of the student saved in the button
-        const pendingBills = document.getElementById('pendingBills-edit').value
         const classroom = document.getElementById('class-edit').value
+        const pendingBills = document.getElementById('pendingBills-edit').value
         await axios({
             method: 'PUT',
             url: `http://localhost:3000/edit-student/${studentId}`,

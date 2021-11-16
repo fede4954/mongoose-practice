@@ -1,16 +1,16 @@
 <h1>Student data:</h1>
-<p>{{this.name}} {{this.lastName}}, class: {{this.class}}</p>
-
-<p>Pending bills:</p>
-<select name="pendingBills" id="pendingBills-edit">
-    <option value="true">YES</option>
-    <option value="false">NO</option>
-</select>
+<p>{{this.name}} {{this.lastName}}, class: {{this.class}}, pending bills: {{this.pendingBills}}</p>
 
 <p>Student's class:</p>
 <select name="class" id="class-edit">
     <option value="A">A</option>
     <option value="B">B</option>
+</select>
+
+<p>Pending bills:</p>
+<select name="pendingBills" id="pendingBills-edit">
+    <option value="true">YES</option>
+    <option value="false">NO</option>
 </select>
 
 {{!-- Store _id to identify the student and pass it from the frontnd to the backend --}}
