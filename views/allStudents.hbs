@@ -3,7 +3,7 @@
 <ul>
     {{#each allStudents}}
     <li>
-        {{this.name}} {{this.lastName}}
+        <a href="/student/{{this._id}}">{{this.name}} {{this.lastName}}</a>
     </li>
     {{/each}}
 </ul>
